@@ -16,6 +16,13 @@ class _DeleteAPIDeletState extends State<DeleteAPIDelet> {
   var _emailController = TextEditingController();
   var _passwordController = TextEditingController();
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    // i have added init state in delete API folder
+    super.initState();
+  }
+
   late SharedPreferences pref;
   @override
   Widget build(BuildContext context) {
@@ -61,8 +68,7 @@ class _DeleteAPIDeletState extends State<DeleteAPIDelet> {
   void deleteApi() async {
     try {
       var response = await http.delete(
-        Uri.parse(
-            "https://api.restful-api.dev/objects/"),
+        Uri.parse("https://api.restful-api.dev/objects/"),
       );
       if (response.statusCode == 200) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
