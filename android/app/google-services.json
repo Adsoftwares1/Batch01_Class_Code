@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "656553835829",
+    "firebase_url": "https://first-firebase-app-class-default-rtdb.firebaseio.com",
+    "project_id": "first-firebase-app-class",
+    "storage_bucket": "first-firebase-app-class.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:656553835829:android:3b925c33e59e2ad7a2207c",
+        "android_client_info": {
+          "package_name": "com.example.practice_app_class"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3I7xrzPwafeJmPGOzp6hOKxckvF0qVek"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
