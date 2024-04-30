@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:http/http.dart' as http;
@@ -54,8 +55,9 @@ class _DeleteAPIDeletState extends State<DeleteAPIDelet> {
               ),
             ),
             TextButton(
-              onPressed: () {
-                deleteApi();
+              onPressed: () async {
+                //deleteApi();
+                await signInWithEmailPassword("ali@gmail.com", "Ali123!@");
               },
               child: Text("Login"),
             ),
@@ -81,6 +83,38 @@ class _DeleteAPIDeletState extends State<DeleteAPIDelet> {
       }
     } catch (e) {
       print("Error: $e");
+    }
+  }
+
+  Future<void> signUpWithEmailPassword(String email, String password) async {
+    try {
+      UserCredential userCredential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      // If the user sign up successfully, you can do additional operations here.
+      print('User signed up successfully!');
+    } catch (e) {
+      // If an error occurs during sign up, you can handle it here.
+      print('Error occurred while signing up: $e');
+    }
+  }
+
+  Future<void> signInWithEmailPassword(String email, String password) async {
+    try {
+      UserCredential userCredential =
+          await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      // If the user signs in successfully, you can do additional operations here.
+      print(
+          'User signed in successfully! ${FirebaseAuth.instance.currentUser!.uid}');
+      //await FirebaseAuth.instance.signOut();
+    } catch (e) {
+      // If an error occurs during sign in, you can handle it here.
+      print('Error occurred while signing in: $e');
     }
   }
 }
