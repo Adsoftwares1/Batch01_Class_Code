@@ -11,11 +11,13 @@ import 'package:practice_app_class/task_25_4/Delete_API_delete.dart';
 import 'package:practice_app_class/task_27/inserting_image.dart';
 import 'package:practice_app_class/task_28/api_integration.dart';
 import 'package:practice_app_class/task_28/practice.dart';
+import 'package:practice_app_class/task_29_4_24/Crud_Operations.dart';
 import 'package:practice_app_class/task_29_4_24/sign_in_with_email_password.dart';
 import 'package:practice_app_class/task_3_4_24/public_api.dart';
 import 'package:practice_app_class/task_4_1/api_with_map.dart';
 import 'package:practice_app_class/task_4_4_2024/typicode_api.dart';
 import 'package:practice_app_class/task_4_4_2024/user_api.dart';
+import 'package:practice_app_class/task_5_1_24/chatGptApi.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -41,7 +43,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Authentication(),
+      home: ChatGPTAPI(),
     );
   }
 }
