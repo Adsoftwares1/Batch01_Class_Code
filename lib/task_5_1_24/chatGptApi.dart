@@ -32,45 +32,5 @@ class _ChatGPTAPIState extends State<ChatGPTAPI> {
     );
   }
 
-  Future<void> sendChatRequest(String prompt) async {
-    try {
-      final String apiKey = "";
-      final String endpoint = 'https://api.openai.com/v1/chat/completions';
-      final Map<String, dynamic> requestData = {
-        "model": "gpt-3.5-turbo",
-        "messages": [
-          {
-            "role": "system",
-            "content": "You are a helpful assistant.",
-          },
-          {
-            "role": "user",
-            "content": prompt,
-          },
-        ],
-      };
-
-      final http.Response response = await http.post(
-        Uri.parse(endpoint),
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer $apiKey',
-        },
-        body: jsonEncode(requestData),
-      );
-
-      if (response.statusCode == 200) {
-        final Map<String, dynamic> responseData = jsonDecode(response.body);
-        setState(() {
-          _response = responseData['choices'][0]['message']['content'];
-        });
-        print(
-            "My Response data: $_response"); // Print the response to the console
-      } else {
-        print('Error: ${response.reasonPhrase}');
-      }
-    } catch (error) {
-      print(error);
-    }
-  }
+  Future<void> sendChatRequest(String prompt) async {}
 }
