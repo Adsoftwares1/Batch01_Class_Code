@@ -34,8 +34,8 @@ class _ChatGPTAPIState extends State<ChatGPTAPI> {
 
   Future<void> sendChatRequest(String prompt) async {
     try {
-      final String apiKey =
-          'sk-proj-y2pzulahVkmfFUwqZN9uT3BlbkFJGKiu8Nc2tsSgXTaWsMI9';
+      final String apiKey = "";
+      // 'sk-proj-y2pzulahVkmfFUwqZN9uT3BlbkFJGKiu8Nc2tsSgXTaWsMI9';
       final String endpoint = 'https://api.openai.com/v1/chat/completions';
       final Map<String, dynamic> requestData = {
         "model": "gpt-3.5-turbo",
