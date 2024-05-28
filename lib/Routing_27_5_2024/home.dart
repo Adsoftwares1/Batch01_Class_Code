@@ -26,7 +26,10 @@ class _HomeScreemState extends State<HomeScreem> {
             ),
             TextButton(
                 onPressed: () {
-                  GoRouter.of(context).goNamed(MyAppRoutesConstants.profile);
+                  GoRouter.of(context)
+                      .goNamed(MyAppRoutesConstants.profile, pathParameters: {
+                    "userName": "Faizan",
+                  });
                   // Navigator.of(context).push(
                   //     MaterialPageRoute(builder: (context) => ProfileScreem()));
                 },

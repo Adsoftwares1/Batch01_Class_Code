@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:practice_app_class/Routing_27_5_2024/home.dart';
@@ -21,16 +23,24 @@ class MyApproutes {
         ),
         GoRoute(
           name: MyAppRoutesConstants.profile,
-          path: '/profile',
+          path: '/profile/:userName',
           pageBuilder: (context, state) {
-            return MaterialPage(child: ProfileScreem());
+            return MaterialPage(
+                child: ProfileScreem(
+              userName: state.pathParameters['userName']!,
+            ));
           },
         ),
         GoRoute(
           name: MyAppRoutesConstants.settings,
-          path: '/settings',
+          path: '/settings/:map',
           pageBuilder: (context, state) {
-            return MaterialPage(child: SettingScreen());
+            Map<String, dynamic> myPassedMap =
+                jsonDecode(state.pathParameters['map']!);
+            return MaterialPage(
+                child: SettingScreen(
+              myMap: myPassedMap,
+            ));
           },
         ),
       ],
